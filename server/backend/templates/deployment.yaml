@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xxx
+  labels:
+    app: xxx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xxx
+  template:
+    metadata:
+      labels:
+        app: xxx
+    spec:
+      containers:
+        - name: xxx
+          image: xxx
+          imagePullPolicy: Never
+          env: []
+          volumeMounts:
+            - name: "packet-tracer-dir"
+              mountPath: "/home/pt/pt/saves"
+      volumes:
+        - name: "packet-tracer-dir"
+          persistentVolumeClaim:
+            claimName: "packet-tracer-data"

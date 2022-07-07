@@ -1,0 +1,26 @@
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: packet-tracer-data-pv
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 5Gi
+  hostPath:
+    path: /home/pt/pt/saves
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: packet-tracer-data
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi

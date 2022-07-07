@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: maissa
+  name: maissa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: maissa
+  template:
+    metadata:
+      labels:
+        app: maissa
+    spec:
+      containers:
+      - env:
+        - name: DISPLAY
+          value: 192.168.3.3:0.0
+        image: packet-tracer:local
+        imagePullPolicy: Never
+        name: maissa-container
+        volumeMounts:
+        - mountPath: /home/pt/pt/saves
+          name: packet-tracer-dir
+      volumes:
+      - name: packet-tracer-dir
+        persistentVolumeClaim:
+          claimName: packet-tracer-data

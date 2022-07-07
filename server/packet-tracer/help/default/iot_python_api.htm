@@ -1,0 +1,4045 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Python API</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="styleNormal.css">
+	</head>
+	<body>
+	<p class="MainHeading1">Python API</p>
+	<hr>
+	<p></p>
+	<div>
+	  <div>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td><h3 id="PythonAPI-ProgramStructureandEvents">Program Structure and Events</h3></td>
+	            <td colspan="3"><h3 id="PythonAPI-Package=N/A">Package = N/A</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong> </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td colspan="1"><p>cleanUp()</p></td>
+	            <td colspan="1">N/A</td>
+	            <td colspan="1">If defined, this function is called once just before the program stops.</td>
+	            <td colspan="1"><pre>def cleanUp():<br>  print("program is stopping.")</pre></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>mouseEvent(pressed, x, y, firstPress)</p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>If defined, this function is called when the user clicks and/or moves the mouse on the workspace icon of this device.</p>
+	                <ul>
+	                  <li>pressed - a boolean indicating whether the left mouse button is pressed down</li>
+	                  <li>x - the x coordinate (in pixels) of the mouse relative to the workspace icon's top left corner</li>
+	                  <li>y - the y coordinate (in pixels) of the mouse relative to the workspace icon's top left corner</li>
+	                  <li>firstPress - a boolean indicating whether the left mouse button is the first time being pressed down after the last call to this function; pressed is true when the mouse button is pressed and moved, but firstPress is true only when the mouse button is first pressed but not when moved.</li>
+                    </ul>
+	                <p> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <pre>def mouseEvent(pressed, x, y, firstPress):<br>  if firstPress:<br>    doSomething()</pre>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td colspan="1">measurementSystemChangeEvent()</td>
+	            <td colspan="1">N/A</td>
+	            <td colspan="1">If defined, this function is called when the user changes the measurement system between Metric and Imperial in Preferences. Use Options.isUsingMetric() in the options package to get the current setting.</td>
+	            <td colspan="1"><pre>from options import *<br><br>def measurementSystemChangeEvent():<br>  METRIC = Options.isUsingMetric()<br>  unit = "C" if METRIC else "F"<br>  refresh()</pre></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="1"><h3 id="PythonAPI-DigitalI/O">Digital I/O </h3></td>
+	            <td colspan="3"><h3 id="PythonAPI-Package=gpio">Package = gpio</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong> </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>pinMode(slot, mode) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Set a digital slot to INPUT or OUTPUT. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>pinMode(1, OUT)</p>
+                  </div>
+	              <div>
+	                <p>pinMode(2, IN)</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>digitalRead(slot) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">int</td>
+	            <td><div>
+	              <div>
+	                <p>Reads from a digital slot, returns HIGH or LOW. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>val = digitalRead(1) </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>digitalWrite(slot, value) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Writes to a digital slot with HIGH or LOW. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>digitalWrite(1, HIGH) </p>
+                  </div>
+	              </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="1"><h3 id="PythonAPI-AnalogI/O">Analog I/O </h3></td>
+	            <td colspan="3"><h3 id="PythonAPI-Package=gpio.1">Package = gpio</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>Function </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>analogRead(slot) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">int</td>
+	            <td><div>
+	              <div>
+	                <p>Reads from an analog slot, returns 0 to 1023. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>val = analogRead(A1)</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>analogWrite(slot, value) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Writes a PWM wave to a digital slot, from 0 to 255. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>analogWrite(A1, 128)</p>
+                  </div>
+	              </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="1"><h3 id="PythonAPI-CustomI/O">Custom I/O </h3></td>
+	            <td colspan="3"><h3 id="PythonAPI-Package=gpio.2">Package = gpio</h3></td>
+              </tr>
+	          <tr>
+	            <td>Function </td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td>Description </td>
+	            <td>Example </td>
+              </tr>
+	          <tr>
+	            <td>customRead(slot) </td>
+	            <td colspan="1">str</td>
+	            <td>Reads from an custom slot, returns a String</td>
+	            <td>val = customRead(1)</td>
+              </tr>
+	          <tr>
+	            <td>customWrite(slot, value) </td>
+	            <td colspan="1">N/A</td>
+	            <td>Writes a string to a digital slot. You can use customRead directly from the other side</td>
+	            <td>customWrite(1, "hello")</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="1"><h3 id="PythonAPI-InputInterrupts/Events">Input Interrupts/Events </h3></td>
+	            <td colspan="3"><h3 id="PythonAPI-Package=gpio.3">Package = gpio</h3></td>
+              </tr>
+	          <tr>
+	            <td>Function </td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td>Description </td>
+	            <td>Example </td>
+              </tr>
+	          <tr>
+	            <td>add_event_detect(slot, callback) </td>
+	            <td colspan="1">N/A</td>
+	            <td><p>Registers a function to be called when the input of a slot changes.</p>
+	              <p>This works for analog, digital and custom inputs. Whenever the input changes, the callback is called.</p>
+	              <p>Only one function is registered per slot. Calling this a second time for the same slot will remove the first callback.</p></td>
+	            <td><pre>def detect():<br>  input = analogRead(0)<br>  # do something<br><br>add_event_detect(0, detect)</pre></td>
+              </tr>
+	          <tr>
+	            <td colspan="1">remove_event_detect(slot)</td>
+	            <td colspan="1">N/A</td>
+	            <td colspan="1">Unregisters the slot for input changes.</td>
+	            <td colspan="1">remove_event_detect(0)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+		<p></p>
+		<div><p></p></div>
+		<p></p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="1"><h3 id="PythonAPI-Time">Time</h3></td>
+	            <td colspan="3"><div>
+	              <h3 id="PythonAPI-Package=time">Package = time</h3>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong> </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+				<tr>
+					<td>
+						<div>
+							<div style="margin-left: 0.0px;">
+								<p><span>delay(tmsec)</span><span> </span></p>
+							</div>
+						</div>
+					</td>
+					<td colspan="1"><span>N/A</span></td>
+					<td>
+						<div>
+							<div style="margin-left: 0.0px;">
+								<p><span>Pauses the program for tmsec milliseconds.</span><span> Value of 0 has the meaning of sleeping until the next execution cycle, as determined by the run-time.<br/></span></p>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div>
+							<div style="margin-left: 0.0px;">
+								<p><span>delay(1700)</span><span> <br/>same as sleep(1.7)</span></p>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="1">sleep(tsec)</td>
+					<td colspan="1">N/A</td>
+					<td colspan="1">Pauses the program for tsec seconds. Fractional seconds values for tsec are acceptable. <span>Value of 0 has the meaning of sleeping until the next execution cycle, as determined by the run-time.</span></td>
+					<td
+						colspan="1">sleep(0.25)<br/>same as delay(250)</td>
+				</tr>
+				<tr>
+					<td colspan="1">uptime()</td>
+					<td colspan="1">float</td>
+					<td colspan="1">Returns the time since the device was started in seconds.</td>
+					<td colspan="1">print(uptime())</td>
+				</tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="1"><h3 id="PythonAPI-BasicNetworking">Basic Networking </h3></td>
+	            <td colspan="3"><h3 id="PythonAPI-Package=networking">Package = networking</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong> </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>localIP() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">str</td>
+	            <td><div>
+	              <div>
+	                <p>Returns the local IP. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>ip = localIP()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>subnetMask() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">str</td>
+	            <td><div>
+	              <div>
+	                <p>Returns the subnet mask. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>mask = subnetMask()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>gatewayIP() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">str</td>
+	            <td><div>
+	              <div>
+	                <p>Returns the gateway IP. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>gateway = gatewayIP()  </p>
+                  </div>
+	              </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="1"><h3 id="PythonAPI-HTTPClient">HTTP Client</h3></td>
+	            <td colspan="3"><h3 id="PythonAPI-Package=http">Package = http</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong> </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <p>HTTPClient() </p>
+	              </div></td>
+	            <td colspan="1"><p>HTTPClient</p></td>
+	            <td><div>
+	              <p>Creates a HTTP Client. </p>
+	              </div></td>
+	            <td><div>
+	              <p>http = HTTPClient()</p>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <p>open(url) </p>
+	              </div></td>
+	            <td colspan="1"><p>N/A</p></td>
+	            <td><div>
+	              <p>Gets an URL. </p>
+	              </div></td>
+	            <td><div>
+	              <p>http.open(&ldquo;<a href="http://www.cisco.com/" rel="nofollow">http://www.cisco.com</a>&rdquo;)</p>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <p>stop() </p>
+	              </div></td>
+	            <td colspan="1"><p>N/A</p></td>
+	            <td><div>
+	              <p>Stops the request. </p>
+	              </div></td>
+	            <td><div>
+	              <p>http.stop()</p>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <p>onDone(callback) </p>
+	              </div></td>
+	            <td colspan="1"><p>N/A</p></td>
+	            <td><div>
+	              <p>Sets the callback for when the request is done. </p>
+	              </div></td>
+	            <td><p>def onHTTPDone(status, data): <br>
+	              print(data)</p>
+	              <p>...</p>
+	              <p>http.onDone(onHTTPDone)</p></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <div>
+        <p> </p>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="1"><h3 id="PythonAPI-HTTPServer(SBConly)">HTTP Server (SBC only)</h3></td>
+	            <td colspan="3">   Package = http</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">Function</td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td colspan="1">Description</td>
+	            <td colspan="1">Example</td>
+              </tr>
+	          <tr>
+	            <td colspan="1"><p>route(path, callback);</p></td>
+	            <td colspan="1"><p>N/A</p></td>
+	            <td colspan="1"><p>Sets up a route for path and calls callback when it is requested. Routes also support wildcards using *.</p></td>
+	            <td colspan="1"><p>def onRouteHello(url, response):<br>
+	              response.send("hello")<br>
+	              HTTPServer.route("/hello", onRouteHello)</p>
+	              <p><br>
+                  </p>
+	              <p>def onRouteAll(url, response):<br>
+	                response.send("world")<br>
+	                HTTPServer.route("/*", onRouteAll)</p>
+	              <div> 
+	                <div><br>
+                    </div>
+                  </div></td>
+              </tr>
+	          <tr>
+	            <td colspan="1"><p>start(port) </p></td>
+	            <td colspan="1"><p>bool</p></td>
+	            <td colspan="1"><p>Starts listening on port. </p></td>
+	            <td colspan="1"><div>
+	              <p>HTTPServer.start(80)</p>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td colspan="1"><p>stop() </p></td>
+	            <td colspan="1"><p>N/A</p></td>
+	            <td colspan="1"><p>Stops listening. </p></td>
+	            <td colspan="1"><p>HTTPServer.stop()</p></td>
+              </tr>
+	          <tr>
+	            <td colspan="1"> </td>
+	            <td colspan="1"> </td>
+	            <td colspan="1"> </td>
+	            <td colspan="1"> </td>
+              </tr>
+	          <tr>
+	            <td colspan="1"><strong>Response class</strong></td>
+	            <td colspan="1"> </td>
+	            <td colspan="1">Passed into the HTTPServer route handler.</td>
+	            <td colspan="1"> </td>
+              </tr>
+	          <tr>
+	            <td colspan="1">send(content)</td>
+	            <td colspan="1">N/A</td>
+	            <td colspan="1">Sends content back as response.</td>
+	            <td colspan="1">response.send("hello")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">setContentType(type)</td>
+	            <td colspan="1">N/A</td>
+	            <td colspan="1">Sets the content type in the response.</td>
+	            <td colspan="1">response.setContentType("text/plain")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">sendFile(filePath)</td>
+	            <td colspan="1">N/A</td>
+	            <td colspan="1">Sends a file back as response. The file path is in the device's file manager, not relative to the source code of the current project/script.</td>
+	            <td colspan="1">response.sendFile("/test.txt")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">sendNotFound()</td>
+	            <td colspan="1">N/A</td>
+	            <td colspan="1">Sends a file not found as response.</td>
+	            <td colspan="1">response.sendNotFound()</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="1"><h3 id="PythonAPI-Email">Email</h3></td>
+	            <td colspan="3"><h3 id="PythonAPI-Package=email">Package = email</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong> </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <p>setup(email, server, username, password) </p>
+	              </div></td>
+	            <td colspan="1"><p>N/A</p></td>
+	            <td><div>
+	              <p>Sets up the email client to be used. </p>
+	              </div></td>
+	            <td><div>
+	              <p>EmailClient.setup(&ldquo;user@cisco.com&rdquo;, "cisco.com", "username", "password")</p>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <p>send(address, subject, body) </p>
+	              </div></td>
+	            <td colspan="1"><p>N/A</p></td>
+	            <td><div>
+	              <p>Sends an email. </p>
+	              </div></td>
+	            <td><div>
+	              <p>EmailClient.send("pt@cisco.com", "subject", "body)</p>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <p>receive() </p>
+	              </div></td>
+	            <td colspan="1"><p>N/A</p></td>
+	            <td><div>
+	              <p>Receives emails. </p>
+	              </div></td>
+	            <td><div>
+	              <p>EmailClient.receive()</p>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <p>onSend(callback)</p>
+	              </div></td>
+	            <td colspan="1"><p>N/A</p></td>
+	            <td><div>
+	              <p>Sets the callback for when sending an email is done. </p>
+	              </div></td>
+	            <td><p>def onEmailSend(success): <br>
+	              print(success)</p>
+	              <p>...</p>
+	              <p>EmailClient.onSend(onEmailSend) </p></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <p>onReceive(callback) </p>
+	              </div></td>
+	            <td colspan="1"><p>N/A</p></td>
+	            <td><div>
+	              <p>Sets the callback for when emails are received. </p>
+	              </div></td>
+	            <td><div>def onEmailReceive(sender, subject, body): <br>
+	              print(body)</div>
+	              <div>...</div>
+	              <div>EmailClient.onReceive(onEmailReceive)</div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="1"><h3 id="PythonAPI-TCP">TCP</h3></td>
+	            <td colspan="3"><h3 id="PythonAPI-Package=tcp">Package = tcp</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong> </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>TCPClient() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">TCPClient</td>
+	            <td><div>
+	              <div>
+	                <p>Creates a TCP Client. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client = TCPClient()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>connect(ip, port) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">bool</td>
+	            <td><div>
+	              <div>
+	                <p>Connects to ip and port. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.connect("1.1.1.1", 2000)</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td colspan="1">connected()</td>
+	            <td colspan="1">bool</td>
+	            <td colspan="1">Returns true if connected</td>
+	            <td colspan="1">client.connected()</td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>close() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Disconnects. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.close()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>state() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">int</td>
+	            <td><div>
+	              <div>
+	                <p>Returns the state of the connection. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.state()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>remoteIP() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">str</td>
+	            <td><div>
+	              <div>
+	                <p>Returns the remote IP. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.remoteIP()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>remotePort() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">int</td>
+	            <td><div>
+	              <div>
+	                <p>Returns the remote port. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.remotePort()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td colspan="1">localIP()</td>
+	            <td colspan="1">str</td>
+	            <td colspan="1">Returns the local IP</td>
+	            <td colspan="1">client.localIP()</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">localPort()</td>
+	            <td colspan="1">int</td>
+	            <td colspan="1">Returns the local port</td>
+	            <td colspan="1">client.localPort()</td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>send(data) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sends data to remote connection</p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.send("hello")</p>
+                  </div>
+	              </div></td>
+              </tr>
+				<tr>
+					<td>
+						<div>
+							<div>
+								<p><span style="color: rgb(0,0,0);"><span>sendWithPDUInfo(data, pduInfo)</span>
+									<span
+									   > </span>
+										</span>
+								</p>
+							</div>
+						</div>
+					</td>
+					<td colspan="1"><span style="color: rgb(0,0,0);">bool</span></td>
+					<td>
+						<div>
+							<div>
+								<p><span style="color: rgb(0,0,0);">Sends data to remote connection with PDU info.</span></p>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div>
+							<div>
+								<p><span style="color: rgb(0,0,0);">data = &quot;hello&quot;<br/>pduInfo = PDUInfo(0xffff00)</span><br/>
+									<span
+										style="color: rgb(0,0,0);">pduInfo.<span>setOutFormat</span>(<span style="color: rgb(0,0,0);">&quot;MyProtocol&quot;, &quot;MyPDU&quot;, </span>{&quot;type&quot;:
+										&quot;REPLY&quot;, &quot;data&quot;: data})</span><br/><span style="color: rgb(0,0,0);">pduInfo.addOutMessage(&quot;I am sending some data.&quot;)</span><br/><br/>
+										<span
+											style="color: rgb(0,0,0);">client.sendWithPDUInfo(data, pduInfo) </span>
+								</p>
+							</div>
+						</div>
+					</td>
+				</tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>onReceive(callback)</p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sets the callback for when data is received. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>def onTCPReceive(data): <br>
+	                print(data)</div>
+	              <div>...</div>
+	              <div>client.onReceive(onTCPReceive)</div>
+	              </div></td>
+              </tr>
+				<tr>
+					<td>
+						<div>
+							<div>
+								<p><span style="color: rgb(0,0,0);">onReceiveWithPDUInfo(callback)</span></p>
+							</div>
+						</div>
+					</td>
+					<td colspan="1"><span style="color: rgb(0,0,0);">N/A</span></td>
+					<td>
+						<div>
+							<div>
+								<p><span style="color: rgb(0,0,0);"><span>Sets the callback for when data is received and includes the PDU info.</span></span>
+								</p>
+							</div>
+						</div>
+					</td>
+					<td>
+						<pre>client = TCPClient()<br/>...<br/>def onTCPReceiveWithPDUInfo(data, pduInfo): <br/>  print(client.remoteIP() + &quot;: &quot; + data)<br/>  pduInfo.addInMessage(&quot;I got some data.&quot;)<br/>  pduInfo.setAccepted()<br/>...</pre>
+						<pre>client.onReceiveWithPDUInfo(onTCPReceiveWithPDUInfo)</pre>
+					</td>
+				</tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>onConnectionChange(callback) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sets the callback for when the connection changes. </p>
+                  </div>
+	              </div></td>
+	            <td><div>def onTCPConnectionChange(type): <br>
+	              print(type)</div>
+	              <div>...</div>
+	              <div>
+	                <div>client.onConnectionChange(onTCPConnectionChange)</div>
+                  </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p> </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"> </td>
+	            <td><div>
+	              <div>
+	                <p>  </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>  </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>TCPServer() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">TCPServer</td>
+	            <td><div>
+	              <div>
+	                <p>Creates a TCP Server. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>server = TCPServer() </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>listen(port) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Starts listening on port. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>server.listen(2000)</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>stop() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Stops listening. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>server.stop()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>onNewClient(callback)</p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sets the callback for when a new client comes in. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>def onTCPNewClient(client): <br>
+	                print(client)</div>
+	              <div>...</div>
+	              <div>server.onNewClient(onTCPNewClient)</div>
+	              </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="1"><h3 id="PythonAPI-UDP">UDP</h3></td>
+	            <td colspan="3"><h3 id="PythonAPI-Package=udp">Package = udp</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong> </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>UDPSocket() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">UDPSocket</td>
+	            <td><div>
+	              <div>
+	                <p>Creates an UDP Socket. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>udp = UDPSocket() </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>begin(port) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">bool</td>
+	            <td><div>
+	              <div>
+	                <p>Starts listening on port. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>udp.begin(2000)</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>stop() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Stops listening. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>udp.stop()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>send(ip, port, data) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">bool</td>
+	            <td><div>
+	              <div>
+	                <p>Sends data. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>udp.send("1.1.1.1", 2000, "hello")</p>
+                  </div>
+	              </div></td>
+              </tr>
+				<tr>
+					<td>
+						<div>
+							<div>
+								<p><span style="color: rgb(0,0,0);"><span>sendWithPDUInfo(ip, port, data, pduInfo)</span>
+									<span
+										> </span>
+										</span>
+								</p>
+							</div>
+						</div>
+					</td>
+					<td colspan="1"><span style="color: rgb(0,0,0);">bool</span></td>
+					<td>
+						<div>
+							<div>
+								<p><span style="color: rgb(0,0,0);"><span>Sends data with PDU info.</span></span>
+								</p>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div>
+							<div>
+								<p><span style="color: rgb(0,0,0);"><span style="color: rgb(0,0,0);">data = &quot;hello&quot;<br/>pduInfo = PDUInfo(0xffff00)</span><br/>
+									<span
+										style="color: rgb(0,0,0);">pduInfo.setOutFormat(<span style="color: rgb(0,0,0);">&quot;MyProtocol&quot;, &quot;MyPDU&quot;, </span>{&quot;type&quot;:
+										&quot;REPLY&quot;, &quot;data&quot;: data})</span><br/><span style="color: rgb(0,0,0);">pduInfo.addOutMessage(&quot;I am sending some data.&quot;)</span><br/><br/>
+										<span
+											style="color: rgb(0,0,0);"><span style="color: rgb(0,0,0);">udp</span>.sendWithPDUInfo(<span style="color: rgb(0,0,0);">&quot;1.1.1.1&quot;, 2000, </span>data,
+											pduInfo) </span>
+											</span>
+								</p>
+							</div>
+						</div>
+					</td>
+				</tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>onReceive(callback)</p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sets the callback for when data is received. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>def onUDPReceive(ip, port, data):</div>
+	              <div>print(data)</div>
+	              <div>...</div>
+	              <div>
+	                <p>udp.onReceive(onUDPReceive)</p>
+                  </div>
+	              </div></td>
+              </tr>
+				<tr>
+					<td>
+						<div>
+							<div>
+								<p><span style="color: rgb(0,0,0);">onReceiveWithPDUInfo(callback)</span></p>
+							</div>
+						</div>
+					</td>
+					<td colspan="1"><span style="color: rgb(0,0,0);">N/A</span></td>
+					<td>
+						<div>
+							<div>
+								<p><span style="color: rgb(0,0,0);"><span>Sets the callback for when data is received and includes PDU info.</span></span>
+								</p>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div>
+							<pre>def onUDPReceiveWithPDUInfo(ip, port, data, pduInfo):<br/>  print(data)</pre>
+							<pre>  pduInfo.addInMessage(&quot;I got some data.&quot;)<br/>  pduInfo.setAccepted()<br/>...</pre>
+							<div>
+								<pre>udp.onReceiveWithPDUInfo(onUDPReceiveWithPDUInfo)</pre>
+							</div>
+						</div>
+					</td>
+				</tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="1"><h3 id="PythonAPI-File(SBConly)">File (SBC only)</h3></td>
+	            <td colspan="3"><h3 id="PythonAPI-Package=file,os,os.path">Package = file, os, os.path</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong> </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>bool exists(path) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">bool</td>
+	            <td><div>
+	              <div>
+	                <p>Returns whether a file exists in the file system. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>exists("/file.txt") </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>File open(path,  mode) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">File</td>
+	            <td><div>
+	              <div>
+	                <p>Opens a file for reading or writing. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>file = open("/file.txt", "r") </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>bool remove(path) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">bool</td>
+	            <td><div>
+	              <div>
+	                <p>Removes a file. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>remove("/file.txt")</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>bool mkdir(path) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">bool</td>
+	            <td><div>
+	              <div>
+	                <p>Creates a directory including all intermediate directories. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>mkdir("/dir1/dir2")</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>bool rmdir(path) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">bool</td>
+	            <td><div>
+	              <div>
+	                <p>Removes a directory. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>rmdir("/dir1/dir2")</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>listdir(path) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">list</td>
+	            <td><div>
+	              <div>
+	                <p>Lists all files in a directory. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>files = listdir("/dir1")</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>exists(path)  </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">bool</td>
+	            <td><div>
+	              <div>
+	                <p>Test if path exists  </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>val = exists("/file")  </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td colspan="1">isfile(path)</td>
+	            <td colspan="1">bool</td>
+	            <td colspan="1">Test if path is a file</td>
+	            <td colspan="1">val = exists("/file")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">isdir(path)</td>
+	            <td colspan="1">bool</td>
+	            <td colspan="1">Test if path is a directory</td>
+	            <td colspan="1">val = exists("/file")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1"> </td>
+	            <td colspan="1"> </td>
+	            <td colspan="1"> </td>
+	            <td colspan="1"> </td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>tell()</p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">int</td>
+	            <td><div>
+	              <div>
+	                <p>Return read/write pointer of the file</p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>file.tell()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>close() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Closes the file. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>file.close()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>seek(position) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">bool</td>
+	            <td><div>
+	              <div>
+	                <p>Seeks to position in file. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>file.seek(0)</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>readline() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">str</td>
+	            <td><div>
+	              <div>
+	                <p>Reads a line of string or to the end of file. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>val = file.readline()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>read(length) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">str</td>
+	            <td><div>
+	              <div>
+	                <p>Reads the length of byte into string</p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>val = file.read()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>write(val) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Writes as binary. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>file.write(val)</p>
+                  </div>
+	              </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+	    <div>
+	      <div>
+	        <p> </p>
+	        <div>
+	          <table>
+	            <tbody>
+	              <tr>
+	                <td colspan="1"><h3 id="PythonAPI-USB">USB</h3></td>
+	                <td colspan="3"><h3 id="PythonAPI-Package=usb">Package = usb</h3></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p><strong>Function</strong> </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1"><strong>Return Type</strong></td>
+	                <td><div>
+	                  <div>
+	                    <p><strong>Description</strong> </p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p><strong>Example</strong> </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td colspan="1">USB( usbNum, speed)</td>
+	                <td colspan="1">USB</td>
+	                <td colspan="1">The variable for USB port.</td>
+	                <td colspan="1">usb = USB(0, 9600);</td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p>close() </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">N/A</td>
+	                <td><div>
+	                  <div>
+	                    <p>Ends communication. </p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p>usb.close(); </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>inWaiting() </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">int </td>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p># of bytes available for reading in buffer. </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>bytes = usb.inWaiting();</p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p>readLine() </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">string</td>
+	                <td><div>
+	                  <div>
+	                    <p>Reads a line of string or to the end of stream. </p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p>val = usb.readLine(); </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p>read() </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">string</td>
+	                <td><div>
+	                  <div>
+	                    <p>Reads the first character and removes from buffer. </p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p>val = usb.read(); </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td colspan="1">peek()</td>
+	                <td colspan="1">string</td>
+	                <td colspan="1">Reads one character without removing from buffer.</td>
+	                <td colspan="1">val = usb.peek();</td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p>write(val) </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">int</td>
+	                <td><div>
+	                  <div>
+	                    <p>Prints to USB, returns the number of bytes written. </p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p>val = usb.write(val); </p>
+	                    <div><br>
+                        </div>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td colspan="1"> </td>
+	                <td colspan="1"> </td>
+	                <td colspan="1"> </td>
+	                <td colspan="1"> </td>
+                  </tr>
+	              <tr>
+	                <td colspan="1">PTmata(usbNum, speed)</td>
+	                <td colspan="1">PTmata</td>
+	                <td colspan="1">The variable for PTmata communication over USB port.</td>
+	                <td colspan="1">ptmata = PTmata(0, 9600)</td>
+                  </tr>
+	              <tr>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>close() </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">N/A</td>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>Ends communication. </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>ptmata.close() </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>pinMode(slot, mode) </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">N/A</td>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>Set a digital slot on other side to INPUT or OUTPUT. </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>ptmata.pinMode(1, OUT)</p>
+                      </div>
+	                  <div>
+	                    <p>ptmata.pinMode(2, IN)</p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p>digitalRead(slot) </p>
+                      </div>
+	                  </div></td>
+	                <td>int</td>
+	                <td><div>
+	                  <div>
+	                    <p>Reads from a digital slot on other side, returns HIGH or LOW. </p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p>val = ptmata.digitalRead(1)</p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p>digitalWrite(slot, value) </p>
+                      </div>
+	                  </div></td>
+	                <td>N/A</td>
+	                <td><div>
+	                  <div>
+	                    <p>Writes to a digital slot on other side with HIGH or LOW. </p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p>ptmata.digitalWrite(1, HIGH)</p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>analogRead(slot) </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">int</td>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>Reads from an analog slot on other side, returns 0 to 1023. </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>val = ptmata.analogRead(A1); </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p>analogWrite(slot, value) </p>
+                      </div>
+	                  </div></td>
+	                <td>N/A</td>
+	                <td><div>
+	                  <div>
+	                    <p>Writes a PWM wave to a digital slot on other side, from 0 to 255. </p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p>ptmata.analogWrite(A1, 128); </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>customRead(slot) </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">string</td>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>Reads from an custom slot on other side, returns a String</p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>val = ptmata.customRead(1); </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p>customWrite(slot, value) </p>
+                      </div>
+	                  </div></td>
+	                <td>N/A</td>
+	                <td><div>
+	                  <div>
+	                    <p>Writes a string to a digital slot on other side. You can use customRead directly from the other side</p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p>ptmata.customWrite(1, "hello"); </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>inWaiting() </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">int </td>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p># of bytes available for reading in buffer. </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>bytes = ptmata.inWaiting();</p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td colspan="1"><p>processInput()</p></td>
+	                <td colspan="1">N/A</td>
+	                <td colspan="1">Reads from buffer and processes inputs for commands and reports of states.</td>
+	                <td colspan="1"><pre>def loop() :<br>  while ptmata.inWaiting():<br>    ptmata.processInput()<br>  ptmata.readAndReportData()</pre></td>
+                  </tr>
+	              <tr>
+	                <td colspan="1"><p>readAndReportData()</p></td>
+	                <td colspan="1">N/A</td>
+	                <td colspan="1">Reads this side's slot values and report to other side if they are changed.</td>
+	                <td colspan="1">ptmata.readAndReportData();</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+	        <p> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <div>
+	      <div>
+	        <div>
+	          <p> </p>
+	          <div>
+	            <table>
+	              <tbody>
+	                <tr>
+	                  <td colspan="1"><h3 id="PythonAPI-IoEClient(SBConly)">IoE Client (SBC only)</h3>
+	                    <div><br>
+                        </div></td>
+	                  <td colspan="3"><h3 id="PythonAPI-Package=ioeclient">Package = ioeclient</h3></td>
+                    </tr>
+	                <tr>
+	                  <td><div>
+	                    <div>
+	                      <p><strong>Function</strong> </p>
+                        </div>
+	                    </div></td>
+	                  <td colspan="1"><strong>Return Type</strong></td>
+	                  <td><div>
+	                    <div>
+	                      <p><strong>Description</strong> </p>
+                        </div>
+	                    </div></td>
+	                  <td><div>
+	                    <div>
+	                      <p><strong>Example</strong> </p>
+                        </div>
+	                    </div></td>
+                    </tr>
+	                <tr>
+	                  <td>IoEClient.setup(api)</td>
+	                  <td colspan="1">N/A</td>
+	                  <td><p>Sets up the API for remote monitor and control from IoE server.</p>
+	                    <p>The api is an object with the following properties describing the device:</p>
+	                    <ul>
+	                      <li>type - a string for the type of this device</li>
+	                      <li>states - an Array of objects with the following properties describing the state:
+	                        <ul>
+	                          <li>name - a string for this state</li>
+	                          <li>type - a string for the type of this state; can be "bool", "number", "options", "string"</li>
+	                          <li>options (required if type is "options") - an object that maps values to names</li>
+	                          <li>unit (optional if type is "number") - the default or Metric unit label; the value of a number state sent to the IoE Server should be in this unit</li>
+	                          <li>imperialUnit (optional if type is "number") - the Imperial System unit label</li>
+	                          <li>toImperialConversion (optional if type is "number") - a string to be evaluated to convert the default value to Imperial unit where x is the default value</li>
+	                          <li>toMetricConversion (optional if type is "number") - a string to be evaluated to convert the value in Imperial unit to the default or Metric unit, where x is the Imperial value</li>
+	                          <li>decimalDigits (optional if type is "number") - the number of decimal digits to round to on IoE Server pages; default is to not round</li>
+	                          <li>controllable - a boolean indicating whether it is remotely controllable</li>
+	                          <li>minValue (required if type is "number" and controllable is true) - the minimum value to allow the IoE Server to set in default or Metric unit</li>
+	                          <li>maxValue (required if type is "number" and controllable is true) - the maximum value to allow the IoE Server to set in default or Metric unit</li>
+                            </ul>
+                          </li>
+                        </ul>
+	                    <p>For measurement systems other than Metric and Imperial, use only the "unit" property. That means if you want a device to show more than Metric and Imperial, you need to create another device for other measurement systems.</p>
+	                    <p> </p></td>
+	                  <td><pre>IoEClient.setup({<br>  "type": "Door",<br>  "states": [{<br>    "name": "Open",<br>    "type": "bool"<br>  }, {<br>    "name": "Lock",<br>    "type": "options",<br>    "options": {<br>      "0": "Unlock",<br>      "1": "Lock"<br>    },<br>    "controllable": True<br>  }]<br>});</pre>
+	                    <pre>IoEClient.setup({<br> "type": "Thermostat",<br> "states": [{<br>  "name": "Status",<br>  "type": "options",<br>  "options": {<br>   "0": "Off",<br>   "1": "Cooling",<br>   "2": "Heating",<br>   "3": "Auto"<br>  },<br>  "controllable": True<br> }, {<br>  "name": "Temperature",<br>  "type": "number",<br>  "unit": "&amp;deg;C",<br>  "imperialUnit": "&amp;deg;F",<br>  "toImperialConversion": "x*1.8+32",<br>  "toMetricConversion": "(x-32)/1.8",<br>  "decimalDigits": 1<br> }, {<br>  "name": "Auto Cool Temperature",<br>  "type": "number",<br>  "unit": "&amp;deg;C",<br>  "imperialUnit": "&amp;deg;F",<br>  "toImperialConversion": "x*1.8+32",<br>  "toMetricConversion": "(x-32)/1.8",<br>  "decimalDigits": 1,<br>  "controllable": True,<br>  "minValue": 10,<br>  "maxValue": 100<br> }, {<br>  "name": "Auto Heat Temperature",<br>  "type": "number",<br>  "unit": "&amp;deg;C",<br>  "imperialUnit": "&amp;deg;F",<br>  "toImperialConversion": "x*1.8+32",<br>  "toMetricConversion": "(x-32)/1.8",<br>  "decimalDigits": 1,<br>  "controllable": True,<br>  "minValue": -100,<br>  "maxValue": 20<br> }]<br>});</pre></td>
+                    </tr>
+	                <tr>
+	                  <td colspan="1">IoEClient.reportStates(states)</td>
+	                  <td colspan="1">N/A</td>
+	                  <td colspan="1"><p>Reports the states of this device to the IoE server.<br>
+	                    The argument can be a string representing all states of this device. Each state is separated by a comma. The argument can also be an array representing all states.<br>
+	                    The number of states must match the length of the states property in setup().</p></td>
+	                  <td colspan="1"><p>IoEClient.reportStates("0,1")</p>
+	                    <p>IoEClient.reportStates([0, 1, "str"])</p></td>
+                    </tr>
+	                <tr>
+	                  <td colspan="1">IoEClient.onInputReceive(callback)</td>
+	                  <td colspan="1">N/A</td>
+	                  <td colspan="1"><p>Sets the callback for processing inputs received from IoE server.<br>
+	                    The argument to the callback is a string containing all states of this device.</p>
+	                    <p>This is called with all states info. onStateSet is called with only the state that was changed.</p></td>
+	                  <td colspan="1"><p>def onInputReceiveDone(input): <br>
+	                    print(input)</p>
+	                    <p>...<br>
+	                      IoEClient.onInputReceive(onInputReceiveDone)</p></td>
+                    </tr>
+	                <tr>
+	                  <td colspan="1">IoEClient.onStateSet(callback)</td>
+	                  <td colspan="1">N/A</td>
+	                  <td colspan="1"><p>Sets the callback for processing inputs received from IoE server.<br>
+	                    The arguments to the callback are state name and state value.</p>
+	                    <p>This is called with only the state that was changed. onInputReceive is called with all states info.</p></td>
+	                  <td colspan="1"><p>def onStateSet(stateName, value):<br>
+	                    print(stateName + ": " + value)<br>
+	                    ...<br>
+	                    IoEClient.onStateSet(onStateSet) </p></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+	          <p> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+	  <div>
+	    <div>
+	      <p> </p>
+	      <div>
+	        <table>
+	          <tbody>
+	            <tr>
+	              <td colspan="1"><h3 id="PythonAPI-Physical">Physical</h3></td>
+	              <td colspan="3"><h3 id="PythonAPI-Package=physical">Package = physical</h3></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p><strong>Function</strong> </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1"><strong>Return Type</strong></td>
+	              <td><div>
+	                <div>
+	                  <p><strong>Description</strong> </p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p><strong>Example</strong> </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>move(x,y) </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">N/A</td>
+	              <td><div>
+	                <div>
+	                  <p>Move thing to position x and y in screen coordinates.&nbsp;The parameters expect x and y are ints. Casting may be required.</p>
+	                </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>move(200,200)</p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>moveBy(x,y)</p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">N/A</td>
+	              <td><div>
+	                <div>
+	                  <p>Increment position of thing by x and y in screen coordinates.&nbsp;The parameters expect x and y are ints. Casting may be required.</p>
+	                </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>moveBy(1,0)</p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td colspan="1">moveItemInWorkspace(name, x, y)</td>
+	              <td colspan="1">bool</td>
+	              <td colspan="1">Moves the item defined by name to x and y in screen coordinates in the active workspace</td>
+	              <td colspan="1">moveItemInWorkspace("building", 300,300)</td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>getX()</p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">float</td>
+	              <td><div>
+	                <div>
+	                  <p>Gets the x position of thing in screen coordinates.</p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>x = getX()</p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>getY()</p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">float</td>
+	              <td><div>
+	                <div>
+	                  <p>Gets the y position of thing in screen coordinates.</p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>y = getY()</p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>devicesAt(x, y, width, height)</p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">list</td>
+	              <td>Gets a list of devices at position x and y with a boundary of width and height.&nbsp;The parameters expect x and y are ints. Casting may be required.</td>
+	              <td><div>
+	                <div>
+	                  <p>devices = devicesAt(10,10,100,100)</p>
+                    </div>
+	                </div></td>
+                </tr>
+				<tr>
+					<td colspan="1">devicesIncludingClustersAt(x, y, width, height)</td>
+					<td colspan="1">Array of string</td>
+					<td colspan="1">Gets a list of devices at position x and y with a boundary of width and height including clusters</td>
+					<td colspan="1"
+						>devicesIncludingClustersAt(10, 10, 100, 100)</td>
+				</tr>
+	            <tr>
+	              <td colspan="1">getName()</td>
+	              <td colspan="1">str</td>
+	              <td colspan="1">Gets the name of the thing</td>
+	              <td colspan="1">devName = getName()</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">getDeviceProperty(deviceName, property)</td>
+	              <td colspan="1">str</td>
+	              <td colspan="1">Gets the property of a device with the specified property</td>
+	              <td colspan="1">prop = getDeviceProperty("Car", "material")</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">setDeviceProperty(deviceName, property, value)</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1">Set property for device</td>
+	              <td colspan="1">prop= setDeviceProperty("Car", "material", "metal")</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">setComponentOpacity(componentName, value)</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1">Set the opacity of a component in the thing. The value is from 0 to 1, where 1 is opaque.</td>
+	              <td colspan="1">setComponentOpacity("light", 0.5)</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">setComponentRotation(componentName, value)</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1">Sets the component rotation in degrees</td>
+	              <td colspan="1">setComponentRotation("hourHand", 90)</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">setThingRotation(value)</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1">Sets the entire thing rotation in degrees</td>
+	              <td colspan="1">setThingRotation(180)</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">getSerialNumber()</td>
+	              <td colspan="1">str</td>
+	              <td colspan="1">Gets the serial number of the thing</td>
+	              <td colspan="1">serialNo = getSerialNumber()</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">setCustomText(x,y,width,height,text)</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1">Write some text on the Thing viewable on the workspace.</td>
+	              <td colspan="1">setCustomText(0,0,100,100,"Device is On")</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">fillColor(componentName, red, green, blue)</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1">Fill the component with the specified RGB values. The component original image will have to be transparent for the color to show up.</td>
+	              <td colspan="1">fillColor("led", 0,0,255)</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">addSound(soundID, soundPath)</td>
+	              <td colspan="1"><p>N/A</p></td>
+	              <td colspan="1"><p>Adds a sound to the device so it can be used.  Sound is referenced by the ID for later use.  PT sound folder is:</p>
+	                <p>"/../Sounds/"</p></td>
+	              <td colspan="1">addSound('sound1', '/../Sounds/buzzLow.wav');</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">playSound(soundID, playLength)</td>
+	              <td colspan="1"><p>N/A</p></td>
+	              <td colspan="1">Plays a sound that has been added to the device.  soundID references the ID the sound was added with, playLength is how many times the sound should run.  -1 will make the sound loop forever.</td>
+	              <td colspan="1">playSound('sound1', 2);</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">stopSound(soundID)</td>
+	              <td colspan="1"><p>N/A</p></td>
+	              <td colspan="1">Stops a sound.  soundID references the ID the sound played.</td>
+	              <td colspan="1">stopSound('sound1');</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">destroySounds()</td>
+	              <td colspan="1"><p>N/A</p></td>
+	              <td colspan="1">Stops any sounds playing in the devices and removes them.  They can't be played again unless re-added.</td>
+	              <td colspan="1">destroySounds();</td>
+                </tr>
+				<tr>
+					<td colspan="1">setParentGraphicFromComponent(componentName, index)</td>
+					<td colspan="1">N/A</td>
+					<td colspan="1">Sets the parent container of both physical and logical view to a graphic from component.</td>
+					<td colspan="1"><span>setParentGraphicFromComponent(&quot;name&quot;, 0)</span></td>
+				</tr>
+				<tr>
+					<td colspan="1">setLogicalParentGraphicFromComponent(componentName, index)</td>
+					<td colspan="1"><span>N/A</span> </td>
+					<td colspan="1"><span>Sets the parent container of logical view to a graphic from component.</span></td>
+					<td colspan="1"><span>setLogicalParentGraphicFromComponent(&quot;name&quot;, 0)</span></td>
+				</tr>
+				<tr>
+					<td colspan="1">setPhysicalParentGraphicFromComponent(componentName, index)</td>
+					<td colspan="1"><span>N/A</span></td>
+					<td colspan="1"><span>Sets the parent container of physical view to a graphic from component.</span></td>
+					<td colspan="1"><span>setPhysicalParentGraphicFromComponent(&quot;name&quot;, 0)</span></td>
+				</tr>
+				<tr>
+					<td colspan="1">setLogicalBackgroundPath(path)</td>
+					<td colspan="1"><span>N/A</span></td>
+					<td colspan="1">Sets the logical view background to an image at path.</td>
+					<td colspan="1"><span>setLogicalBackgroundPath(&quot;path&quot;)</span></td>
+				</tr>
+				<tr>
+					<td colspan="1">getAttributeOfDeviceAtSlot(attribute, slot)</td>
+					<td colspan="1">float</td>
+					<td colspan="1">Returns the attribute value of the device connected at the specified slot.</td>
+					<td colspan="1">value = <span>getAttributeOfDeviceAtSlot(&quot;name&quot;, 0)</span></td>
+				</tr>
+				<tr>
+					<td colspan="1">getAttributeOfDevice(attribute)</td>
+					<td colspan="1"><span>float</span></td>
+					<td colspan="1">Returns the attribute value of this device.</td>
+					<td colspan="1">value = <span>getAttributeOfDevice(&quot;name&quot;)</span></td>
+				</tr>
+				<tr>
+					<td colspan="1">getSlotsCount()</td>
+					<td colspan="1">int</td>
+					<td colspan="1">Returns the number of slots this device has.</td>
+					<td colspan="1">slots = getSlotsCount()</td>
+				</tr>
+			</tbody>
+            </table>
+          </div>
+	      <p> </p>
+	      <div>
+	        <div>
+	          <div>
+	            <p> </p>
+	            <div>
+<table>
+	        <tbody>
+	                  <tr>
+	                    <td colspan="1"><h3 id="PythonAPI-Environment">Environment</h3></td>
+	                    <td colspan="3"><h3 id="PythonAPI-Package=environment(fromenvironmentimport*)or(fromenvironmentimportEnvironment)">Package = environment (from environment import *) or (from environment import Environment)</h3></td>
+                      </tr>
+                      	          <tr>
+	            <td colspan="1">Function</td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td colspan="1">Description</td>
+	            <td colspan="1">Example</td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>get(environmentID)</p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">float</td>
+	            <td><div>
+	              <div>
+	                <p>Gets the value of the environment by its ID. You can get the ID by placing your mouse over the environment name in the Environment GUI.</p>
+	                <p>If the environment does not exist, it will return -1.</p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>Environment.get("Ambient Temperature")</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>setGlobalProperty(propertyName, value) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sets a global property with a value. Both are strings.</p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>Environment.setGlobalProperty("CLOCK", "12:00:00 pm")</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td colspan="1">getGlobalProperty(propertyName)</td>
+	            <td colspan="1">string</td>
+	            <td colspan="1">Returns the global property value.</td>
+	            <td colspan="1">Environment.getGlobalProperty("CLOCK")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">hasGlobalProperty(propertyName)</td>
+	            <td colspan="1">boolean</td>
+	            <td colspan="1">Returns true if the property name exists, otherwise false.</td>
+	            <td colspan="1">Environment.hasGlobalProperty("CLOCK")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">setContribution(environmentID, rate, limit, bCumulative)</td>
+	            <td colspan="1"> </td>
+	            <td colspan="1"><p>Set the things contribution to an environment based on it's environment ID. You do not need to worry about how much time has passed and you only need to call this function when you need different parameters.</p>
+	              <p>rate: the rate to add or subtract from the total environment value in value/second. Value should be in metric.</p>
+	              <p>limit: the maximum or minimum this thing is allowed to contribute. The limit should be in metric.</p>
+	              <p>bCumulative: add up contributed values over time. For environments like light sources that disappear when off, bCumulative should be set to false.</p></td>
+	            <td colspan="1"><p>// increase the Ambient Temperature at 0.05C/second until 100C.</p>
+	              <p>Environment.setContribution("Ambient Temperature", 0.05, 100, true)</p></td>
+              </tr>
+	          <tr>
+	            <td colspan="1">removeCumulativeContribution(environmentID)</td>
+	            <td colspan="1"> </td>
+	            <td colspan="1">Remove the overall cumulative contribution from the Thing. In most cases, you do not need to do this. Rather, you should set up the container to use transference or other things to remove accumulated contributions.</td>
+	            <td colspan="1">Environment.removeCumulativeContribution("Ambient Temperature")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">setTransferenceMultiplier(environmentID, multiplier)</td>
+	            <td colspan="1"> </td>
+	            <td colspan="1"><p>Increase or decrease the current transference value by multiplier.</p>
+	              <p>For example, if you open the door to the house, you may want to speed up the Ambient Temperature convergence with the outside by increasing the container's transference by the multiplier.</p></td>
+	            <td colspan="1">Environment.setTransferenceMultiplier("Ambient Temperature", 2)</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">getTotalContributions(environmentID)</td>
+	            <td colspan="1">float</td>
+	            <td colspan="1">Returns the total value of contributions by all things</td>
+	            <td colspan="1">Environment.getTotalContributions("Wind Speed")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">getCumulativeContribution(environmentID)</td>
+	            <td colspan="1"> </td>
+	            <td colspan="1">Returns the cumulativeContribution for just the thing that is calling the function</td>
+	            <td colspan="1">Environment.getCumulativeContribution("Wind Speed")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">getMetricValue(environmentID)</td>
+	            <td colspan="1">float</td>
+	            <td colspan="1">Returns the metric value of the environmentID regardless of user preference</td>
+	            <td colspan="1">Environment.getMetricValue("Ambient Temperature")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">getValueWithUnit(environmentID)</td>
+	            <td colspan="1">string</td>
+	            <td colspan="1">Returns the value in metric or imperial based on the user preference and also append the unit</td>
+	            <td colspan="1">Environment.getValueWithUnit("Ambient Temperature")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">getUnit(environmentID)</td>
+	            <td colspan="1">string</td>
+	            <td colspan="1">Returns the unit for the environmentID. The unit can be metric or imperial based on the user preferences</td>
+	            <td colspan="1">Environment.getUnit("Ambient Temperature")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">getVolume()</td>
+	            <td colspan="1">float</td>
+	            <td colspan="1">Returns the volume size of the container in meters^3 that caller of the function is in</td>
+	            <td colspan="1">Environment.getVolume()</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">getTimeInSeconds()</td>
+	            <td colspan="1">int</td>
+	            <td colspan="1">Returns the current time</td>
+	            <td colspan="1">Environment.getTimeInSeconds();</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">getElapsedTime(lastTime)</td>
+	            <td colspan="1">int</td>
+	            <td colspan="1">Returns the time passed since the lastTime value</td>
+	            <td colspan="1"><p>var time = Environment.getTimeInSeconds();</p>
+	              <p>delay(1000);</p>
+	              <p>Environment.getElapsedTime(time);</p></td>
+              </tr>
+            </tbody>
+          </table>
+	             
+                </div>
+	            <p> </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	<p> </p>
+	<div>
+	  <table>
+	    <tbody>
+	      <tr>
+	        <td colspan="1"><h3 id="PythonAPI-RealHTTP(ExternalNetworkAccess)">Real HTTP<br>
+	          (External Network Access)</h3></td>
+	        <td colspan="3"><h3 id="PythonAPI-Package=realhttp">Package = realhttp</h3></td>
+          </tr>
+	      <tr>
+	        <td><div>
+	          <div>
+	            <p><strong>Function</strong> </p>
+              </div>
+	          </div></td>
+	        <td colspan="1"><strong>Return Type</strong></td>
+	        <td><div>
+	          <div>
+	            <p><strong>Description</strong> </p>
+              </div>
+	          </div></td>
+	        <td><div>
+	          <div>
+	            <p><strong>Example</strong> </p>
+              </div>
+	          </div></td>
+          </tr>
+	      <tr>
+	        <td><div>
+	          <p>RealHTTPClient() </p>
+	          </div></td>
+	        <td colspan="1"><p>RealHTTPClient</p></td>
+	        <td><div>
+	          <p>Creates a Real HTTP Client. </p>
+	          </div></td>
+	        <td><div>
+	          <p>http = RealHTTPClient()</p>
+	          </div></td>
+          </tr>
+	      <tr>
+	        <td><div>
+	          <p>get(url) </p>
+	          </div></td>
+	        <td colspan="1"><p>N/A</p></td>
+	        <td><div>
+	          <p>Gets an URL. </p>
+	          </div></td>
+	        <td><div>
+	          <p>http.get(&ldquo;<a href="http://www.cisco.com/" rel="nofollow">http://www.cisco.com</a>&rdquo;)</p>
+	          </div></td>
+          </tr>
+			<tr>
+				<td colspan="1">post(url, data)</td>
+				<td colspan="1">N/A</td>
+				<td colspan="1">
+					<p>Posts data to an URL.</p>
+					<p>data can be a string or a dictionary; if dictionary, it will be URL-encoded into the body.</p>
+				</td>
+				<td colspan="1">http.post(url, {&quot;num&quot;:1, &quot;str&quot;:&quot;hello&quot;})</td>
+			</tr>
+			<tr>
+				<td colspan="1">put(url, data)</td>
+				<td colspan="1">N/A</td>
+				<td colspan="1">
+					<p>Puts data to an URL.</p>
+					<p><span>data can be a string or a dictionary; if dictionary, it will be URL-encoded into the body.</span></p>
+				</td>
+				<td colspan="1">http.put(url, {&quot;num&quot;:1, &quot;str&quot;:&quot;hello&quot;})</td>
+			</tr>
+	      <tr>
+	        <td colspan="1">deleteResource(url) </td>
+	        <td colspan="1">N/A</td>
+	        <td colspan="1">Sends a delete to an URL.</td>
+	        <td colspan="1">http.deleteResource(url)</td>
+          </tr>
+			<tr>
+				<td colspan="1">getWithHeader(url, header)</td>
+				<td colspan="1">N/A</td>
+				<td colspan="1">Gets an URL with custom header fields as a dictionary.</td>
+				<td colspan="1">http.getWithHeader(&quot;<a href="https://api.ciscospark.com/v1/people/me" rel="nofollow">https://api.ciscospark.com/v1/people/me</a>&quot;,<br/>									{&quot;Authorization&quot;: &quot;Bearer xxyyzz&quot;})</td>
+			</tr>
+			<tr>
+				<td colspan="1">postWithHeader(url, data, header)</td>
+				<td colspan="1">N/A</td>
+				<td colspan="1">
+					<p>Posts data to an URL with custom header fields as a dictionary.</p>
+					<p><span>data can be a string or a dictionary; if dictionary and custom header field has &quot;application/json&quot; as the &quot;content-type&quot;, it will be json-encoded, otherwise it will be URL-encoded into the body.</span></p>
+				</td>
+				<td colspan="1"><span>http.postWithHeader(&quot;<a href="https://api.ciscospark.com/v1/messages" rel="nofollow">https://api.ciscospark.com/v1/messages</a></span><span>&quot;,<br/></span>									{&quot;toPersonId&quot;: &quot;722bb271-d7ca-4bce-a9e3-471e4412fa77&quot;, &quot;text&quot;: &quot;Hi Sparky&quot;},<br/><span> {&quot;Authorization&quot;: &quot;Bearer xxyyzz&quot;, &quot;Content-Type&quot;: &quot;application/json&quot;})</span></td>
+			</tr>
+			<tr>
+				<td>putWithHeader(url, data, header)</td>
+				<td>N/A</td>
+				<td>
+					<p>Puts data to an URL with custom header fields as a dictionary.</p>
+					<p><span>data can be a string or a dictionary; if dictionary and custom header field has &quot;application/json&quot; as the &quot;content-type&quot;, it will be json-encoded, otherwise it will be URL-encoded into the body.</span></p>
+				</td>
+				<td><span>http.putWithHeader(&quot;<a href="https://api.ciscospark.com/v1/rooms/" rel="nofollow">https://api.ciscospark.com/v1/rooms/</a>xxyyzz</span><span>&quot;,<br/></span>									{&quot;title&quot;: &quot;New room name&quot;},<br/><span> {&quot;Authorization&quot;: &quot;Bearer xxyyzz&quot;})</span></td>
+			</tr>
+			<tr>
+				<td>deleteResourceWithHeader(url, header)</td>
+				<td>N/A</td>
+				<td>Sends a delete to an URL with custom header fields as a dictionary.</td>
+				<td>http.deleteResourceWithHeader(&quot;<a href="https://api.ciscospark.com/v1/messages/" rel="nofollow">https://api.ciscospark.com/v1/messages/</a>xxyyzz&quot;,<br/>									{&quot;Authorization&quot;: &quot;Bearer xxyyzz&quot;})</td>
+			</tr>
+			<tr>
+				<td>
+					<div>
+						<p><span>onDone(callback)</span><span> </span></p>
+					</div>
+				</td>
+				<td colspan="1">
+					<p>N/A</p>
+				</td>
+				<td>
+					<div>
+						<p><span>Sets the callback for when the request is done.</span></p>
+						<p><span>replyHeader is a dictionary of header fields in the reply. It is added to 7.1 and is optional.</span></p>
+					</div>
+				</td>
+				<td>
+					<p>def onHTTPDone(status, data, replyHeader): <br/>print(data)</p>
+					<p>...</p>
+					<p>http.onDone(onHTTPDone)</p>
+				</td>
+			</tr>
+		</tbody>
+      </table>
+    </div>
+	<p> </p>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="1"><h3 id="PythonAPI-RealTCP(ExternalNetworkAccess)">Real TCP<br>
+	              (External Network Access) </h3></td>
+	            <td colspan="3"><h3 id="PythonAPI-Package=realtcp">Package = realtcp</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong> </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>RealTCPClient() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">RealTCPClient</td>
+	            <td><div>
+	              <div>
+	                <p>Creates a Real TCP Client. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client = RealTCPClient()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>connect(ip, port) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Connects to ip and port. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.connect("1.1.1.1", 2000)</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td colspan="1">connected()</td>
+	            <td colspan="1">bool</td>
+	            <td colspan="1">Returns true if connected.</td>
+	            <td colspan="1">client.connected()</td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>close() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Disconnects. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.close()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>state() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">int</td>
+	            <td><div>
+	              <div>
+	                <p>Returns the state of the connection. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.state()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>remoteIP() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">str</td>
+	            <td><div>
+	              <div>
+	                <p>Returns the remote IP. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.remoteIP()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td colspan="1">remoteHost()</td>
+	            <td colspan="1">str</td>
+	            <td colspan="1">Returns the remote server host name.</td>
+	            <td colspan="1">client.remoteHost()</td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>remotePort() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">int</td>
+	            <td><div>
+	              <div>
+	                <p>Returns the remote port. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.remotePort()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td colspan="1">localIP()</td>
+	            <td colspan="1">str</td>
+	            <td colspan="1">Returns the local IP.</td>
+	            <td colspan="1">client.localIP()</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">localPort()</td>
+	            <td colspan="1">int</td>
+	            <td colspan="1">Returns the local port.</td>
+	            <td colspan="1">client.localPort()</td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>send(data) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sends data to remote connection.</p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.send("hello")</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td colspan="1">error()</td>
+	            <td colspan="1">int</td>
+	            <td colspan="1">Returns the last error code.</td>
+	            <td colspan="1">client.error()</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">errorString()</td>
+	            <td colspan="1">str</td>
+	            <td colspan="1">Returns the last error in string.</td>
+	            <td colspan="1">client.errorString()</td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>onReceive(callback)</p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sets the callback for when data is received. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>def onTCPReceive(data): <br>
+	                print(data)</div>
+	              <div>...</div>
+	              <div>client.onReceive(onTCPReceive)</div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>onConnectionChange(callback) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sets the callback for when the connection changes. </p>
+                  </div>
+	              </div></td>
+	            <td><div>def onTCPConnectionChange(type): <br>
+	              print(type)</div>
+	              <div>...</div>
+	              <div>
+	                <div>client.onConnectionChange(onTCPConnectionChange)</div>
+                  </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="1"><h3 id="PythonAPI-RealUDP(ExternalNetworkAccess)">Real UDP<br>
+	              (External Network Access) </h3></td>
+	            <td colspan="3"><h3 id="PythonAPI-Package=realudp">Package = realudp</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong> </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>RealUDPSocket() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">RealUDPSocket</td>
+	            <td><div>
+	              <div>
+	                <p>Creates an Real UDP Socket. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>udp = RealUDPSocket() </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>begin(port) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">bool</td>
+	            <td><div>
+	              <div>
+	                <p>Starts listening on port. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>udp.begin(2000)</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>stop() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Stops listening. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>udp.stop()</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td colspan="1">joinMulticastGroup(ip)</td>
+	            <td colspan="1">bool</td>
+	            <td colspan="1">Joins a multicast group. Must call begin() first.</td>
+	            <td colspan="1">udp.joinMulticastGroup("224.0.0.1")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">leaveMulticastGroup(ip)</td>
+	            <td colspan="1">bool</td>
+	            <td colspan="1">Leaves a multicast group.</td>
+	            <td colspan="1">udp.leaveMulticastGroup("224.0.0.1")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">localIP()</td>
+	            <td colspan="1">str</td>
+	            <td colspan="1">Returns the local IP.</td>
+	            <td colspan="1">udp.localIP()</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">localPort()</td>
+	            <td colspan="1">int</td>
+	            <td colspan="1">Returns the local port.</td>
+	            <td colspan="1">udp.localPort()</td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>send(ip, port, data) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">bool</td>
+	            <td><div>
+	              <div>
+	                <p>Sends data. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>udp.send("1.1.1.1", 2000, "hello")</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>onReceive(callback)</p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sets the callback for when data is received. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>def onUDPReceive(ip, port, data):</div>
+	              <div>print(data)</div>
+	              <div>...</div>
+	              <div>
+	                <p>udp.onReceive(onUDPReceive)</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td colspan="1">error()</td>
+	            <td colspan="1">int</td>
+	            <td colspan="1">Returns the last error code.</td>
+	            <td colspan="1">udp.error()</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">errorString()</td>
+	            <td colspan="1">str</td>
+	            <td colspan="1">Returns the last error in string.</td>
+	            <td colspan="1">udp.errorString()</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <div>
+        <p> </p>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="1"><h3 id="PythonAPI-JSON">JSON</h3></td>
+	            <td colspan="3"><h3 id="PythonAPI-Package=json">Package = json</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong> </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>dumps(obj) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">str</td>
+	            <td><div>
+	              <div>
+	                <p>Serializes a Python object into JSON string. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>jsonStr = json.dumps({"num":1, "s":"str"})</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>loads(jsonStr) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">python object</td>
+	            <td><div>
+	              <div>
+	                <p>Converts a JSON string into a Python object.</p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>obj = json.loads(s)</p>
+                  </div>
+	              </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <div>
+        <p> </p>
+			<table>
+				<tbody>
+					<tr>
+						<td>
+							<h3 id="PythonAPI-GUI(SBCandThing,someEndDevices)"><span>GUI </span><span style="color: rgb(255,0,0);">(SBC and Thing</span>
+								<span
+									style="color: rgb(255,0,0);"><span>, </span>some End Devices</span>)</h3>
+						</td>
+						<td colspan="3">
+							<h3 id="PythonAPI-Package=gui">Package = gui</h3>
+						</td>
+					</tr>
+				  <tr>
+					<td><div>
+					  <div>
+						<p><strong>Function</strong> </p>
+					  </div>
+					  </div></td>
+					<td colspan="1"><strong>Return Type</strong></td>
+					<td><div>
+					  <div>
+						<p><strong>Description</strong> </p>
+					  </div>
+					  </div></td>
+					<td><div>
+					  <div>
+						<p><strong>Example</strong> </p>
+					  </div>
+					  </div></td>
+				  </tr>
+					<tr>
+						<td colspan="1">GUI.setup()</td>
+						<td colspan="1">N/A</td>
+						<td colspan="1">Initializes the GUI and tells the GUI to display the html file configured in the manifest file. If the app is not
+							installed, it throws an error.</td>
+						<td colspan="1">GUI.setup()</td>
+					</tr>
+					<tr>
+						<td colspan="1">GUI.update(type, args)</td>
+						<td colspan="1">N/A</td>
+						<td colspan="1">Asynchronously calls the html file's update() function passing in type and args. Type is a string and args can be
+							any JSON valid object.</td>
+						<td colspan="1">GUI.update(&quot;status&quot;, &quot;playing&quot;)</td>
+					</tr>
+					<tr>
+						<td colspan="1">guiEvent(type, args)</td>
+						<td colspan="1">N/A</td>
+						<td colspan="1">If defined, this function is called asynchronously when the html file calls guiEvent(type, args). Type is a string
+							and args can be any JSON valid object.</td>
+						<td colspan="1">
+							<pre>def guiEvent(type, args):<br/>  print('guiEvent: ' + type + ',' + dumps(args));</pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+        </div>
+	    <div>
+        <p> </p>
+		<table>
+			<colgroup>
+				<col/>
+				<col/>
+				<col/>
+				<col/>
+			</colgroup>
+			<tbody>
+				<tr>
+					<td>
+						<h3 id="PythonAPI-CLI(SBCandThing,someEndDevices)"><span>CLI </span><span style="color: rgb(255,0,0);">(SBC and Thing</span>
+							<span
+								style="color: rgb(255,0,0);"><span>, </span>some End Devices</span>)</h3>
+					</td>
+					<td colspan="3">
+						<h3 id="PythonAPI-Package=cli">Package = cli</h3>
+					</td>
+				</tr>
+			  <tr>
+				<td><div>
+				  <div>
+					<p><strong>Function</strong> </p>
+				  </div>
+				  </div></td>
+				<td colspan="1"><strong>Return Type</strong></td>
+				<td><div>
+				  <div>
+					<p><strong>Description</strong> </p>
+				  </div>
+				  </div></td>
+				<td><div>
+				  <div>
+					<p><strong>Example</strong> </p>
+				  </div>
+				  </div></td>
+			  </tr>
+				<tr>
+					<td colspan="1">CLI.setup()</td>
+					<td colspan="1">N/A</td>
+					<td colspan="1">Initializes the CLI and will call the cliEvent() function if the app was started from a command in the Command Prompt.</td>
+					<td
+						colspan="1">CLI.setup()</td>
+				</tr>
+				<tr>
+					<td colspan="1">CLI.exit()</td>
+					<td colspan="1">N/A</td>
+					<td colspan="1">Exits the CLI mode and returns back to the Command Prompt.</td>
+					<td colspan="1">CLI.exit()</td>
+				</tr>
+				<tr>
+					<td colspan="1">cliEvent(type, args)</td>
+					<td colspan="1">N/A</td>
+					<td colspan="1">
+						<p>If defined, this function is called synchronously when different CLI events happen. Type is a string and args can
+							be any JSON valid object.</p>
+						<p>Type can be:</p>
+						<ul>
+							<li>&quot;invoked&quot; - this is called when the command is invoked from the Command Prompt; args is a list of command
+								arguments where the first element is the command name.</li>
+							<li>&quot;interrupted&quot; - this is called when the user uses break shortcut (Ctrl+C) while this app is running
+								in CLI mode.</li>
+						</ul>
+					</td>
+					<td colspan="1">
+						<pre>def cliEvent(type, args):<br/>  print('cliEvent: ' + type + ',' + dumps(args));</pre>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+        </div>
+	    <div>
+        <p> </p>
+			<table>
+				<tbody>
+					<tr>
+						<td>
+							<h3 id="PythonAPI-Simulation">Simulation</h3>
+						</td>
+						<td colspan="3">
+							<h3 id="PythonAPI-Package=simulation">Package = simulation</h3>
+						</td>
+					</tr>
+					  <tr>
+						<td><div>
+						  <div>
+							<p><strong>Function</strong> </p>
+						  </div>
+						  </div></td>
+						<td colspan="1"><strong>Return Type</strong></td>
+						<td><div>
+						  <div>
+							<p><strong>Description</strong> </p>
+						  </div>
+						  </div></td>
+						<td><div>
+						  <div>
+							<p><strong>Example</strong> </p>
+						  </div>
+						  </div></td>
+					  </tr>
+					  <tr>
+						<td colspan="1">Simulation.isInSimulationMode()</td>
+						<td colspan="1">bool</td>
+						<td colspan="1">Returns whether PT is currently in Simulation Mode.</td>
+						<td colspan="1">
+							<p>if <span>Simulation.</span><span>isInSimulationMode():<br/> print(&quot;In sim mode&quot;) </span></p>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">Simulation.addCustomProtocolType(protocol)</td>
+						<td colspan="1">bool</td>
+						<td colspan="1">Adds a new protocol type to the current file/network. <span> The protocol will show up in the Event List Filters. <span>Returns true if successful, false otherwise.</span></span>
+						</td>
+						<td colspan="1">Simulation.addCustomProtocolType(&quot;MyProtocol&quot;)</td>
+					</tr>
+					<tr>
+						<td>Simulation.hasCustomProtocolType(protocol)</td>
+						<td>bool</td>
+						<td><span><span>Returns whether the protocol type is already added to the current file/network.</span></span>
+						</td>
+						<td>if not Simulation.hasCustomProtocolType(&quot;MyProtocol&quot;):<br/> Simulation.addCustomProtocolType(&quot;MyProtocol&quot;)</td>
+					</tr>
+					<tr>
+						<td colspan="1">Simulation.addCustomPDU(protocol, pduType, definition)</td>
+						<td colspan="1">bool</td>
+						<td colspan="1">
+							<p>Adds a new protocol type and PDU type to the current file/network. The protocol will show up in the Event List
+								Filters, and the PDU with its definition will show up in PDU details. Returns true if successful, false if the
+								definition is invalid. It will replace existing definitions if using the same protocol and PDU type names.</p>
+							<p>The definition argument is an object with the following properties describing the layout and fields of the PDU:</p>
+							<ul>
+								<li>title - a string that shows up as the title in PDU Details</li>
+								<li>units - a string</li>
+								<li>unit_marks - an array of numbers indicating where the marks are to show up</li>
+								<li>width - an integer indicating the width of PDU</li>
+								<li>fields - an array of objects representing each field in the PDU; each object must contain the following properties:
+									<ul>
+										<li>
+											<p>value - a label that can contain a variable inside curly braces; the variable will be replaced with a value
+												in the PDUInfo fields object</p>
+										</li>
+										<li>size - an integer indicating the size of the field</li>
+									</ul>
+								</li>
+							</ul>
+						</td>
+						<td colspan="1">
+							<pre>Simulation.addCustomPDU(&quot;MyProtocol&quot;, &quot;MyPDU&quot;, {<br/>  &quot;title&quot;: &quot;My PDU&quot;,<br/>  &quot;units&quot;: &quot;Bits&quot;,<br/>  &quot;unit_marks&quot;: [16],<br/>  &quot;width&quot;: 32,<br/>  &quot;fields&quot;: [<br/>    {<br/>      &quot;value&quot;: &quot;TYPE: {type}&quot;,<br/>      &quot;size&quot;: 32<br/>    },<br/>    {<br/>      &quot;value&quot;: &quot;DATA: {data}&quot;,<br/>      &quot;size&quot;: 32<br/>    }<br/>  ]<br/>})</pre>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1"><span>Simulation.hasCustomPDU(protocol, pduType)</span></td>
+						<td colspan="1">bool</td>
+						<td colspan="1"><span>Returns whether the protocol and PDU type is already added to the current file/network.</span></td>
+						<td colspan="1"
+							>
+							<p>if not Simulation.hasCustomPDU(&quot;MyProtocol&quot;, &quot;MyPDU&quot;):<br/> # add it </p>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1"><br/></td>
+						<td colspan="1"><br/></td>
+						<td colspan="1"><br/></td>
+						<td colspan="1"><br/></td>
+					</tr>
+					<tr>
+						<td colspan="1">PDUInfo(color)</td>
+						<td colspan="1">PDUInfo</td>
+						<td colspan="1">Creates a PDU Info object with the pdu color. A PDUInfo is required to show PDU with more details in Simulation
+							Mode.</td>
+						<td colspan="1">pduInfo = PDUInfo(0xffff00)</td>
+					</tr>
+					<tr>
+						<td colspan="1">setOutFormat(<span>protocol, pduType, </span>fields)</td>
+						<td colspan="1">N/A</td>
+						<td colspan="1">Sets the outgoing PDU to be displayed in a custom PDU definition. The fields argument is an object with the variables
+							defined in the PDU definition fields property.</td>
+						<td colspan="1">pduInfo.<span>setOutFormat</span>(<span>&quot;MyProtocol&quot;, &quot;MyPDU&quot;, </span>{&quot;type&quot;: &quot;REPLY&quot;,
+							&quot;data&quot;: data})</td>
+					</tr>
+					<tr>
+						<td colspan="1">addOutMessage(message)</td>
+						<td colspan="1">N/A</td>
+						<td colspan="1">Adds a message to the outgoing OSI layer 7.</td>
+						<td colspan="1">pduInfo.addOutMessage(&quot;I am sending some data.&quot;)</td>
+					</tr>
+					<tr>
+						<td colspan="1">addInMessage(message)</td>
+						<td colspan="1">N/A</td>
+						<td colspan="1">Adds a message to the incoming OSI layer 7.</td>
+						<td colspan="1">pduInfo.addInMessage(&quot;I received some data.&quot;)</td>
+					</tr>
+					<tr>
+						<td colspan="1">setAccepted()</td>
+						<td colspan="1">N/A</td>
+						<td colspan="1">Sets the PDU as accepted.</td>
+						<td colspan="1">pduInfo.setAccepted()</td>
+					</tr>
+					<tr>
+						<td colspan="1">setDropped()</td>
+						<td colspan="1">N/A</td>
+						<td colspan="1">Sets the PDU as dropped.</td>
+						<td colspan="1">pduInfo.setDropped()</td>
+					</tr>
+				</tbody>
+			</table>
+        </div>
+	    <div>
+        <p> </p>
+			<table>
+				<tbody>
+					<tr>
+						<td colspan="1">
+							<h3 id="PythonAPI-Workspace"><span>Workspace</span></h3>
+						</td>
+						<td colspan="3">
+							<h3 id="PythonAPI-Package=workspace"><span>Package = workspace</span></h3>
+						</td>
+					</tr>
+					  <tr>
+						<td><div>
+						  <div>
+							<p><strong>Function</strong> </p>
+						  </div>
+						  </div></td>
+						<td colspan="1"><strong>Return Type</strong></td>
+						<td><div>
+						  <div>
+							<p><strong>Description</strong> </p>
+						  </div>
+						  </div></td>
+						<td><div>
+						  <div>
+							<p><strong>Example</strong> </p>
+						  </div>
+						  </div></td>
+					  </tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">getPhysicalObject()</span></p>
+								</div>
+							</div>
+						</td>
+						<td colspan="1"><span style="color: rgb(0,0,0);">PhysicalObject</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>Returns the current device's physical object.</span>
+										<span
+											> </span>
+											</span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">po = getPhysicalObject()</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">getName()</span></p>
+								</div>
+							</div>
+						</td>
+						<td colspan="1"><span style="color: rgb(0,0,0);">str</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the name of this physical object.</span></p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(po.getName())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">getType()</span></p>
+								</div>
+							</div>
+						</td>
+						<td colspan="1"><span style="color: rgb(0,0,0);">int</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the type of this physical object. Valid values are:</span></p>
+									<p><br/></p>
+									<p>INTER_CITY = 0<br/>CITY = 1<br/>BUILDING = 2<br/>WIRING_CLOSET = 3<br/>RACK = 4<br/>TABLE = 5<br/>DEVICE = 6<br/>MULTIUSER
+										= 7<br/>GENERIC_CONTAINER = 8</p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(po.getType())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>getX()</span><span> </span></span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);">float</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the x coordinate relative to its parent in meters.</span></p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(po.getX())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>getY()</span><span> </span></span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);">float</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the y coordinate relative to its parent in meters.</span></p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(po.getY())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>getCenterX()</span><span> </span></span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);">float</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the center x coordinate relative to its parent in meters.</span></p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(po.getCenterX())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>getCenterY()</span><span> </span></span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);">float</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the center y coordinate relative to its parent in meters.</span></p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(po.getCenterY())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>getGlobalX()</span><span> </span></span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);">float</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the global x coordinate of this physical object in meters.</span></p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(po.getGlobalX())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>getGlobalY()</span><span> </span></span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);">float</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the global y coordinate <span style="color: rgb(0,0,0);">of this physical object </span>in
+										meters.</span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(po.getGlobalX())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>getWidth()</span><span> </span></span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);">float</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the width of this physical object in meters.</span></p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(po.getWidth())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>getHeight()</span><span> </span></span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);">float</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the height of this physical object in meters.</span></p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(po.getHeight())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>moveTo(x, y)</td>
+						<td>N/A</td>
+						<td>Moves this physical object's top left corner to the specified coordinates in meters relative to its parent.</td>
+						<td
+							>po.moveTo(10, 20)</td>
+					</tr>
+					<tr>
+						<td colspan="1">moveCenterTo(x, y)</td>
+						<td colspan="1">N/A</td>
+						<td colspan="1">Moves this physical object's center to the specified coordinates in meters relative to its parent.</td>
+						<td colspan="1"
+							>po.moveCenterTo(10, 20)</td>
+					</tr>
+					<tr>
+						<td>moveBy(x, y)</td>
+						<td>N/A</td>
+						<td>Moves this physical object by the specified coordinates in meters.</td>
+						<td>po.moveBy(10, 20)</td>
+					</tr>
+					<tr>
+						<td colspan="1">setVelocity(x, y)</td>
+						<td colspan="1">N/A</td>
+						<td colspan="1">Sets this physical object's velocity in meters. This physical object then moves automatically.</td>
+						<td colspan="1"
+							>po.setVelocity(1, 2)</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>getXVelocity()</span><span> </span></span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);">float</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the x velocity of this physical object in meters.</span></p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(po.getXVelocity())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>getYVelocity()</span><span> </span></span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);">float</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the y <span style="color: rgb(0,0,0);">velocity of this physical object</span>												in meters.</span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(po.getYVelocity())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">getParent()</td>
+						<td colspan="1">PhysicalObject</td>
+						<td colspan="1">Returns this physical object's parent.</td>
+						<td colspan="1">parentPO = po.getParent()</td>
+					</tr>
+					<tr>
+						<td colspan="1">moveOutOfParent()</td>
+						<td colspan="1">bool</td>
+						<td colspan="1">Moves this physical object out of its parent to the same level as the parent, and returns whether it was successful.</td>
+						<td
+							colspan="1">po.moveOutOfParent()</td>
+					</tr>
+					<tr>
+						<td colspan="1">moveInto(name)</td>
+						<td colspan="1">bool</td>
+						<td colspan="1">Moves this physical object into a container with the specified name that is in the same level as this physical object,
+							and returns whether it was successful.</td>
+						<td colspan="1">po.moveInto(&quot;Corporate Office&quot;)</td>
+					</tr>
+					<tr>
+						<td colspan="1">getChildCount()</td>
+						<td colspan="1">int</td>
+						<td colspan="1">Returns the number of children this physical object has.</td>
+						<td colspan="1">print(po.getChildCount())</td>
+					</tr>
+					<tr>
+						<td colspan="1">getChildAt(index)</td>
+						<td colspan="1">PhysicalObject</td>
+						<td colspan="1">Returns the child physical object at the specified index.</td>
+						<td colspan="1">childPO = po.getChildAt(0)</td>
+					</tr>
+					<tr>
+						<td colspan="1">getChild(name)</td>
+						<td colspan="1">PhysicalObject</td>
+						<td colspan="1">Returns the child physical object with the specified name.</td>
+						<td colspan="1">childPO = po.<span>getChild(&quot;Wiring Closet&quot;)</span></td>
+					</tr>
+					<tr>
+						<td colspan="1"><br/></td>
+						<td colspan="1"><br/></td>
+						<td colspan="1"><br/></td>
+						<td colspan="1"><br/></td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">getLogicalObject()</span></p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);">LogicalObject</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>Returns the current device's logical object.</span>
+										<span
+											> </span>
+											</span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">lo = getLogicalObject()</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">getName()</span></p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);">str</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the name of this logical object.</span></p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(lo.getName())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">getType()</span></p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);">int</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the type of this logical object. Valid values are:</span></p>
+									<p>ROOT = 1099<br/>DEVICE = 1100<br/>CLUSTER = 1104<br/>MULTIUSERITEM = 1108</p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(lo.getType())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>getX()</span><span> </span></span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);">int</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the x coordinate relative to its parent in pixels.</span></p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(lo.getX())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>getY()</span><span> </span></span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);"><span style="color: rgb(0,0,0);">int</span><br/></span>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the y coordinate relative to its parent in <span style="color: rgb(0,0,0);">pixels</span>.</span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(lo.getY())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>getCenterX()</span><span> </span></span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);"><span style="color: rgb(0,0,0);">int</span><br/></span>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the center x coordinate relative to its parent in <span style="color: rgb(0,0,0);">pixels</span>.</span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(lo.getCenterX())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>getCenterY()</span><span> </span></span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);"><span style="color: rgb(0,0,0);">int</span><br/></span>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the center y coordinate relative to its parent in <span style="color: rgb(0,0,0);">pixels</span>.</span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(lo.getCenterY())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>getWidth()</span><span> </span></span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);"><span style="color: rgb(0,0,0);">int</span><br/></span>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the width of this logical object in <span style="color: rgb(0,0,0);">pixels</span>.</span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(lo.getWidth())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>getHeight()</span><span> </span></span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);"><span style="color: rgb(0,0,0);">int</span><br/></span>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the height of this logical object in <span style="color: rgb(0,0,0);">pixels</span>.</span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(lo.getHeight())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>moveTo(x, y)</td>
+						<td>N/A</td>
+						<td>Moves this logical object's top left corner to the specified coordinates in <span style="color: rgb(0,0,0);">pixels</span>									relative to its parent.</td>
+						<td>lo.moveTo(10, 20)</td>
+					</tr>
+					<tr>
+						<td>moveCenterTo(x, y)</td>
+						<td>N/A</td>
+						<td>Moves this logical object's center to the specified coordinates in <span style="color: rgb(0,0,0);">pixels</span>									relative to its parent.</td>
+						<td>lo.moveCenterTo(10, 20)</td>
+					</tr>
+					<tr>
+						<td>moveBy(x, y)</td>
+						<td>N/A</td>
+						<td>Moves this logical object by the specified coordinates in <span style="color: rgb(0,0,0);">pixels</span>.</td>
+						<td
+							>lo.moveBy(10, 20)</td>
+					</tr>
+					<tr>
+						<td>setVelocity(x, y)</td>
+						<td>N/A</td>
+						<td>Sets this logical object's velocity in <span style="color: rgb(0,0,0);">pixels</span>. This logical object then moves
+							automatically.</td>
+						<td>lo.setVelocity(1, 2)</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>getXVelocity()</span><span> </span></span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);">float</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the x velocity of this logical object in <span style="color: rgb(0,0,0);">pixels</span>.</span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(lo.getXVelocity())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);"><span>getYVelocity()</span><span> </span></span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td><span style="color: rgb(0,0,0);">float</span></td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">Returns the y <span style="color: rgb(0,0,0);">velocity of this logical object</span>												in <span style="color: rgb(0,0,0);">pixels</span>.</span>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div>
+								<div>
+									<p><span style="color: rgb(0,0,0);">print(lo.getYVelocity())</span></p>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>getParent()</td>
+						<td>LogicalObject</td>
+						<td>Returns this logical object's parent.</td>
+						<td>parentLO = lo.getParent()</td>
+					</tr>
+					<tr>
+						<td>moveOutOfParent()</td>
+						<td>bool</td>
+						<td>Moves this logical object out of its parent to the same level as the parent, and returns whether it was successful.</td>
+						<td
+							>lo.moveOutOfParent()</td>
+					</tr>
+					<tr>
+						<td>moveInto(name)</td>
+						<td>bool</td>
+						<td>Moves this logical object into a container with the specified name that is in the same level as this logical object,
+							and returns whether it was successful.</td>
+						<td>lo.moveInto(&quot;Cluster0&quot;)</td>
+					</tr>
+					<tr>
+						<td>getChildCount()</td>
+						<td>int</td>
+						<td>Returns the number of children this logical object has.</td>
+						<td>print(lo.getChildCount())</td>
+					</tr>
+					<tr>
+						<td>getChildAt(index)</td>
+						<td>LogicalObject</td>
+						<td>Returns the child logical object at the specified index.</td>
+						<td>childlo = lo.getChildAt(0)</td>
+					</tr>
+					<tr>
+						<td>getChild(name)</td>
+						<td>LogicalObject</td>
+						<td>Returns the child logical object with the specified name.</td>
+						<td>childlo = lo.<span>getChild(&quot;Cluster0&quot;)</span></td>
+					</tr>
+				</tbody>
+			</table>
+        </div>
+      </div>
+    </div>
+	<p>&nbsp;</p>	
+    
+    
+</body>
+</html>
